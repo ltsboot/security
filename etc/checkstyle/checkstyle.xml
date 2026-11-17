@@ -10,6 +10,8 @@
 	<module name="com.puppycrawl.tools.checkstyle.checks.header.RegexpHeaderCheck">
 		<property name="headerFile" value="${config_loc}/header.txt" />
 		<property name="fileExtensions" value="java" />
+		<!-- ltsboot: optional line 3 "Modifications Copyright ... the ltsboot contributors." -->
+		<property name="multiLines" value="3" />
 	</module>
 	<module name="io.spring.javaformat.checkstyle.SpringChecks">
 		<property name="excludes" value="io.spring.javaformat.checkstyle.check.SpringHeaderCheck" />
