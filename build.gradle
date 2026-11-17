@@ -25,7 +25,10 @@ apply plugin: 'org.springframework.github.milestone'
 apply plugin: 'org.springframework.github.changelog'
 apply plugin: 'org.springframework.github.release'
 
-group = 'org.springframework.security'
+// ltsboot: published groupId, overridable with -PltsGroupId=<x> (default: the original groupId, for internal Nexus)
+ext.ltsGroupId = project.findProperty('ltsGroupId') ?: 'org.springframework.security'
+group = ltsGroupId
+subprojects { group = rootProject.ext.ltsGroupId }
 description = 'Spring Security'
 
 ext.snapshotBuild = version.contains("SNAPSHOT")
